@@ -11,7 +11,8 @@ peluncuran dan implementasi aplikasi sistem yaitu dengan diupload ke hosting den
 ## Dibuat dengan 
 
 * [CodeIgniter 4](https://github.com/codeigniter4/CodeIgniter4) - Sistem PHP yang digunakan
-* [Argon Dashboard 2](https://www.creative-tim.com/product/argon-dashboard) - Tampilan kit UI untuk BackEnd Admin
+* [Argon Dashboard 2](https://www.creative-tim.com/product/argon-dashboard) - Tampilan kit UI untuk halaman Admin
+* [Paper Kit 2](https://www.creative-tim.com/product/argon-dashboard) - Tampilan kit UI untuk halaman tamu
 
 ## Developer
 

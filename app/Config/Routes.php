@@ -32,7 +32,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->add('/admin', 'Admin\Data\Siswa::list');
+$routes->add('/admin/data/siswa', 'Admin\Data\Siswa::list');
+$routes->add('/admin/data/siswa/(:any)', 'Admin\Data\Siswa::$1');
+
+$routes->get('/login', 'Admin\Auth::index');
+$routes->post('/login', 'Admin\Auth::do_login');
+$routes->add('/', 'Home::index');
 
 /*
  * --------------------------------------------------------------------
