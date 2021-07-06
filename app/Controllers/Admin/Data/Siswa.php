@@ -12,17 +12,15 @@ class Siswa extends Controller
 	protected $request;
 	protected $sidebar_link = [
 		"Dashboard|fas fa-tachometer-alt|primary|admin",
-		"Postingan|fas fa-newspaper|primary|admin/postingan/artikel",
-		"Data Mitra|fas fa-store|primary|admin/mitra",
-		"Pengguna|fas fa-users|primary|admin/pengguna",
-		"Tata Letak|fas fa-ruler-combined|primary|admin/tataletak",
+		"Data|fas fa-database|primary|admin/data",
+		"Evaluasi|fas fa-clipboard-check|primary|admin/evaluasi",
 		"Konfigurasi|fas fa-cog|primary|admin/konfigurasi",
 	];
 	protected $navbar_link = [
-		"Tambah Mitra|fas fa-plus-circle|admin/mitra/tambah|primary",
-		"List Mitra|fas fa-list|admin/mitra/",
-		"Laporan|fas fa-clipboard-list|admin/mitra/laporan",
-		"Statistik|fas fa-chart-line|admin/mitra/statistik",
+		'Siswa|fas fa-users|admin/data/siswa',
+		'Kelas|fas fa-school|admin/data/jurusan',
+		'Mata Pelajaran|fas fa-book|admin/data/matapelajaran',
+		'Jurusan|fas fa-school|admin/data/jurusan',
 	];
 	function auth() {
 		helper('cookie');
@@ -66,19 +64,12 @@ class Siswa extends Controller
 			return redirect()->to(site_url('logout'));
 		}
 		$data['ui_title'] = "Dashboard - Administrator";
-		$data['ui_sidebar'] = [
-			"Dashboard|fas fa-tachometer-alt|primary|admin",
-			"Postingan|fas fa-newspaper|primary|admin/postingan/artikel",
-			"Data Mitra|fas fa-store|primary|admin/mitra",
-			"Pengguna|fas fa-users|primary|admin/pengguna",
-			"Tata Letak|fas fa-ruler-combined|primary|admin/tataletak",
-			"Konfigurasi|fas fa-cog|primary|admin/konfigurasi",
-		];
-		$data['ui_sidebar_active'] = 'Dashboard';
+		$data['ui_sidebar'] = $this->sidebar_link;
+		$data['ui_sidebar_active'] = 'Data';
 
-		$data['ui_navbar'] = ['||'];
+		$data['ui_navbar'] = $this->navbar_link;
+		$data['ui_navbar_active'] = 'Siswa';
 		$data['validation'] = \Config\Services::validation();
-		$data['ui_navbar_active'] = "List Akun Admin";
 
 		return view('admin/data/siswa/list', $data);
 	}

@@ -165,12 +165,35 @@
 }
 
 .tail-select {
-	width: 100% !important;
+	flex: 1 1;
+	border-left: 0 !important;
+	margin-left: -1px !important;
+    font-size: .875rem;
+    font-weight: 400;
+    height: inherit !important;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1.25rem + 2px);
+    padding: .625rem .75rem;
+    transition: all .15s cubic-bezier(.68, -.55, .265, 1.55); 
+    color: #8898aa;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: 0 3px 2px rgba(233, 236, 239, .05);
 }
-.tail-select a.delete-item {
-	position: absolute;
-    right: 10px;
-    top: 2px;
+.tail-select .label-inner {
+	padding: 0 !important;
+}
+.tail-select .tail-select-container {
+	border: 0 !important;
+}
+.tail-select .select-handle {
+	margin: 0 4px 2px 0  !important
+}
+.tail-select .select-label {
+	padding: 2px 30px 0 0 !important;
 }
 .select-dropdown .dropdown-inner{
     overflow: visible !important;

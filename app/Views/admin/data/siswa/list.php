@@ -15,7 +15,7 @@
     	<i class="fas fa-times"></i> 
     </a>
 </div>
-<div class="header bg-warning py-4">
+<div class="header bg-success py-4">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">

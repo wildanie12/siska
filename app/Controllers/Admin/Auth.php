@@ -6,6 +6,12 @@ use App\Models\AdminModel;
 
 class Auth extends Controller
 {
+	/**
+	 * Fix Intelephense 
+	 * @var HTTP\IncomingRequest
+	 */
+	protected $request;
+	
 	function init() {
 		helper('cookie');
 		$logged_username = get_cookie('logged_username');
@@ -88,17 +94,18 @@ class Auth extends Controller
 		$navbar = $konfigurasiModel->find('APP_NAVBAR');
 		$navbar = json_decode($navbar['value_text']);
 		$navbar_converted = ["Beranda|fas fa-home|". base_url()];
-
-		foreach ($navbar as $nav) {
-			if (isset($nav->dropdown)) {
-				$nav_dropdown = [];
-				foreach ($nav->dropdown as $dropdown) {
-					$nav_dropdown[] = (($dropdown->judul != '') ? $dropdown->judul : '-') . '|' . $dropdown->icon. '|' . $dropdown->url;
+		if ($navbar != '') {
+			foreach ($navbar as $nav) {
+				if (isset($nav->dropdown)) {
+					$nav_dropdown = [];
+					foreach ($nav->dropdown as $dropdown) {
+						$nav_dropdown[] = (($dropdown->judul != '') ? $dropdown->judul : '-') . '|' . $dropdown->icon. '|' . $dropdown->url;
+					}
+					$navbar_converted[$nav->judul . '|' . $nav->icon] = $nav_dropdown;
 				}
-				$navbar_converted[$nav->judul . '|' . $nav->icon] = $nav_dropdown;
-			}
-			else {
-				$navbar_converted[] = (($nav->judul != '') ? $nav->judul : '-') . '|' . $nav->icon. '|' . $nav->url;
+				else {
+					$navbar_converted[] = (($nav->judul != '') ? $nav->judul : '-') . '|' . $nav->icon. '|' . $nav->url;
+				}
 			}
 		}
 		$data['ui_navbar'] = $navbar_converted;

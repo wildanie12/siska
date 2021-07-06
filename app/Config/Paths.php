@@ -83,4 +83,20 @@ class Paths
 	 * @var string
 	 */
 	public $viewDirectory = __DIR__ . '/../Views';
+
+	/**
+	 * ---------------------------------------------------------------
+	 * PUBLIC FOLDER PATH (Custom Config)
+	 * ---------------------------------------------------------------
+	 *  
+	 * Variabel konfigurasi ini untuk mendeklarasikan path yang 
+	 * digunakan oleh folder Public yang berisi tentang file
+	 * dan folder yang terbuka untuk public. Ini berguna saat
+	 * melakukan upload agar App dapat mengerti direktori publik
+	 * yang akan digunakan sebagai tempat file yang diupload.
+	 * Rubah variabel ini untuk deployement yang berbeda path server 
+	 * 
+	 *  @var string
+	 */
+	public $publicDirectory = __DIR__ . '/../../public';
 }
