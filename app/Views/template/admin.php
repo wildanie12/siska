@@ -52,8 +52,8 @@
             <div class="sidenav-header align-items-center mb-2">
                 <a class="navbar-brand p-0" href="<?=base_url()?>">
                     <div class="d-flex justify-content-center">
-                        <img src="<?=site_url($konfigurasi['APP_LOGO']['value_text'])?>" class="navbar-brand-img" alt="..." style="max-height: 70px;">
-                        <div class="ml-2 text-left d-flex flex-column justify-content-center">
+                        <img src="<?=site_url($konfigurasi['APP_LOGO']['value_text'])?>" class="ml-2 navbar-brand-img" alt="..." style="max-height: 70px;">
+                        <div class="ml-2 text-left d-flex flex-column justify-content-center" style="flex-grow: 1;">
                             <h4 class="text-uppercase mb-0" style="font-size: 11pt; line-height: 15px; font-weight: bolder;">
                                 <?=$konfigurasi['APP_FOOTER_JUDUL']['value']?>
                             </h4> 

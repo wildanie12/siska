@@ -15,6 +15,7 @@ class SiswaModel extends Model
 
     protected $allowedFields = [
         "nis",
+        "nisn",
         "nama_lengkap",
         "jenis_kelamin",
         "tempat_lahir",
@@ -22,7 +23,9 @@ class SiswaModel extends Model
         "jurusan_id",
         "tahun_masuk",
         "asal_sekolah",
-        "nama_orangtua",
+        "foto_diri",
+        "nama_ayah",
+        "nama_ibu",
         "nama_wali"
     ];
 }

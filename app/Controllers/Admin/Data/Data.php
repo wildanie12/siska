@@ -65,7 +65,6 @@ class Data extends Controller {
             'Jurusan|fas fa-school|admin/data/jurusan',
         ];
         $data['ui_navbar_active'] = "";
-
         return view('admin/data/index', $data);
     }
 }

@@ -46,7 +46,9 @@ $routes->add('/admin/evaluasi/(:any)', 'Admin\Evaluasi::$1');
 $routes->get('/login', 'Admin\Auth::index');
 $routes->post('/login', 'Admin\Auth::do_login');
 $routes->get('/logout', 'Admin\Auth::logout');
-$routes->add('/', 'Home::index');
+
+$routes->add('/kelulusan/(:any)', 'Kelulusan::$1');
+$routes->add('/', 'Kelulusan::cetak_kelulusan');
 
 /*
  * --------------------------------------------------------------------
